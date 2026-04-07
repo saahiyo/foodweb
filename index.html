@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy | Food Delivery Mumbai</title>
+    <link rel="icon" type="image/x-icon" href="https://www.swiggy.com/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-section">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Swiggy_Logo.svg/500px-Swiggy_Logo.svg.png" alt="Swiggy Logo" class="logo">
+                <div class="location-picker"> Mumbai, Maharashtra, India ▼</div>
+            </div>
+            <ul class="nav-links">
+                <li><i data-lucide="search"></i><span>Search</span></li>
+                <li><i data-lucide="percent"></i><span>Offers</span></li>
+                <li><i data-lucide="life-buoy"></i><span>Help</span></li>
+                <li><i data-lucide="user"></i><span>Sign In</span></li>
+                <li><i data-lucide="shopping-cart"></i><span>Cart</span></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- "What's on your mind?" Section -->
+        <section class="hero-section" id="cuisine-section">
+            <div class="section-title">
+                <span>What's on your mind?</span>
+                <div class="scroll-controls">
+                    <button class="btn-icon" data-dir="left" onclick="scrollSection('cuisine-list', -400)">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button class="btn-icon" data-dir="right" onclick="scrollSection('cuisine-list', 400)">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="category-scroll" id="cuisine-list">
+                <div class="skeleton-circle-row">
+                    <div class="shimmer skeleton-circle"></div>
+                    <div class="shimmer skeleton-circle"></div>
+                    <div class="shimmer skeleton-circle"></div>
+                    <div class="shimmer skeleton-circle"></div>
+                    <div class="shimmer skeleton-circle"></div>
+                    <div class="shimmer skeleton-circle"></div>
+                    <div class="shimmer skeleton-circle"></div>
+                    <div class="shimmer skeleton-circle"></div>
+                    <div class="shimmer skeleton-circle"></div>
+                </div>
+            </div>
+        </section>
+
+        <hr style="margin: 16px 0; border: none; border-bottom: 1px solid var(--border-light);">
+
+        <!-- Top Brands Section -->
+        <section class="listing-section" id="top-brands-section">
+            <div class="section-title">
+                <span>Top restaurant chains in Mumbai</span>
+                <div class="scroll-controls">
+                    <button class="btn-icon" data-dir="left" onclick="scrollSection('top-brands-list', -500)">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button class="btn-icon" data-dir="right" onclick="scrollSection('top-brands-list', 500)">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="category-scroll" id="top-brands-list">
+                <script>
+                    for(let i=0; i<6; i++) {
+                        document.write(`
+                            <div class="skeleton-card" style="min-width: 240px;">
+                                <div class="shimmer skeleton-img"></div>
+                                <div class="shimmer skeleton-title" style="width: 80%"></div>
+                                <div class="shimmer skeleton-subtitle" style="width: 60%"></div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <hr style="margin: 32px 0; border: none; border-bottom: 1px solid var(--border-light);">
+
+        <!-- Filter Bar + Main Listing Grid -->
+        <section class="listing-section">
+            <div class="section-title">
+                <span>Restaurants with online food delivery in Mumbai</span>
+                <span class="restaurant-count-badge" id="restaurant-count"></span>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <button class="filter-pill active"><i data-lucide="sliders-horizontal"></i> Filter</button>
+                <button class="filter-pill">Sort By</button>
+                <button class="filter-pill">Fast Delivery</button>
+                <button class="filter-pill">New on Swiggy</button>
+                <button class="filter-pill">Ratings 4.0+</button>
+                <button class="filter-pill">Pure Veg</button>
+                <button class="filter-pill">Offers</button>
+                <button class="filter-pill">Rs. 300-600</button>
+                <button class="filter-pill">Less than Rs. 300</button>
+            </div>
+
+            <div class="restaurant-grid" id="restaurant-list">
+                <script>
+                    for(let i=0; i<12; i++) {
+                        document.write(`
+                            <div class="skeleton-card">
+                                <div class="shimmer skeleton-img"></div>
+                                <div class="shimmer skeleton-title" style="width: 80%"></div>
+                                <div class="shimmer skeleton-subtitle" style="width: 60%"></div>
+                                <div class="shimmer skeleton-subtitle" style="width: 50%"></div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #02060c; color: #fff; padding: 48px 0; margin-top: 48px;">
+        <div class="container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;">
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Swiggy_Logo.svg/500px-Swiggy_Logo.svg.png" alt="Swiggy" style="height: 32px; margin-bottom: 20px;">
+                <p style="color: #939599; font-size: 13px;">© 2026 Bundl Technologies Pvt. Ltd</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 16px;">Company</h4>
+                <ul style="list-style: none; color: #939599; line-height: 2; font-size: 14px;">
+                    <li>About</li>
+                    <li>Careers</li>
+                    <li>Team</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 16px;">Contact us</h4>
+                <ul style="list-style: none; color: #939599; line-height: 2; font-size: 14px;">
+                    <li>Help & Support</li>
+                    <li>Partner with us</li>
+                    <li>Ride with us</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 16px;">We deliver to:</h4>
+                <ul style="list-style: none; color: #939599; line-height: 2; font-size: 14px;">
+                    <li>Bangalore</li>
+                    <li>Gurgaon</li>
+                    <li>Hyderabad</li>
+                    <li>Delhi</li>
+                    <li>Mumbai</li>
+                    <li>Pune</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
